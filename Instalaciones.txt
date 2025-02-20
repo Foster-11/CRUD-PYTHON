@@ -16,3 +16,6 @@ echo "*" > .venv/.gitignore
 
 5.Instalar directamente los paquetes:
 pip install -r requirements.txt
+
+6. Instalar uvicorn
+pip install uvicorn
