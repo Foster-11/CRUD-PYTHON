@@ -16,3 +16,5 @@ echo "*" > .venv/.gitignore
 
 5.Instalar directamente los paquetes:
 pip install "fastapi[standard]"
+
+6. Como se está utilizando MySQL, es importante importar el conector: pip install mysql-connector
