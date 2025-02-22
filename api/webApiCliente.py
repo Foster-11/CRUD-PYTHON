@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from model.modeloCliente import modeloCliente
+from model.modeloCliente import modeloCliente ##Del archivo modeloCliente.py se está importando la clase modeloCliente que contiene la estructura de los datos relacionados con el cliente
 
 app: FastAPI = FastAPI(
     title="web API de Clientes",
@@ -21,7 +21,7 @@ async def get_cliente(idCliente: str):
 
 #POST
 @app.post(
-    "/crearCliente",
+    "/crearClientes",
     response_model= modeloCliente,
     description= "Crear cliente",
     summary="Crear cliente",
@@ -39,4 +39,13 @@ async def post_cliente(cliente: modeloCliente):
     tags=["Cliente"]
 )
 async def put_cliente(parametro: str, cliente: modeloCliente):
-    return cliente
+    return modeloCliente
+
+#DELETE
+##@app.delete(
+  #  "/eliminarCliente",
+  #  response_model= modeloCliente,
+  #  description= "Eliminar cliente",
+  #  summary="Eliminar cliente",
+  #  tags=["Cliente"]
+#)

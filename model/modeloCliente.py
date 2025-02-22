@@ -6,12 +6,12 @@ from datetime import datetime
 class modeloCliente(BaseModel):
     idCliente: str
     primerNombre: str
-    segundoNombre: str
+    segundoNombre: str | None
     primerApellido: str
-    segundoApellido: str
+    segundoApellido: str | None
     email: str
     contrasena: str
-    direccion: str
+    direccion: str | None
     telefono: str
     idTipoIdentificacion: int
     fechaRegistro: datetime
