@@ -2,22 +2,24 @@
 
 import mysql.connector
 
-class BrokerCliente():
-    def __init__(self) -> None:## Constructor de la clase
-         pass## No se realiza ninguna acción
 
-    def consultar_cliente_id(self, idCliente: str):## Método para consultar un cliente por id
+class BrokerCliente():
+    def __init__(self) -> None:  ## Constructor de la clase
+         pass  ## No se realiza ninguna acción
+
+    def consultar_cliente_id(self, idCliente: str) -> list:  ## Método para consultar un cliente por id
          db = mysql.connector.Connect(
              host="localhost",
              user="root",
              passwd="root",
+             port="3306",
              db="rappiapp"
          )
          results = []
          try:
-            query = (f"SELECT * FROM cliente WHERE idCliente = '{idCliente}'") ##La f antes de la cadena de texto permite la interpolación de variables
+            query = "SELECT * FROM cliente WHERE idCliente = %s"  ## Usar parámetros en la consulta
             cursor = db.cursor()
-            cursor.execute(query)
+            cursor.execute(query, (idCliente,))  ## Pasar el parámetro idCliente
             results = cursor.fetchall()
             cursor.close()
         
@@ -26,6 +28,6 @@ class BrokerCliente():
          finally:
             db.close()
          return results
-         
-         
-         
+
+
+

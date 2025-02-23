@@ -14,7 +14,8 @@ python -m pip install --upgrade pip
 4. Iniciar repositorio en git y agregar al .gitignore el archivo .venv
 echo "*" > .venv/.gitignore
 
-5.Instalar directamente los paquetes:
+5. Instalar directamente los paquetes:
 pip install "fastapi[standard]"
 
 6. Como se está utilizando MySQL, es importante importar el conector: pip install mysql-connector
+7. Asegurarse de tener una version actualizada: pip install --upgrade mysql-connector-python
