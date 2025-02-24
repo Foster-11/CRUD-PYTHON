@@ -4,7 +4,7 @@ import uvicorn
 
 def start():
     uvicorn.run(
-        "apis.webApiCliente:app", ## archivo en api que contiene la funcion app
+        "api.webApiCliente:app", ## archivo en api que contiene la funcion app
         host="127.0.0.1",
         port=8070,
         reload=True
