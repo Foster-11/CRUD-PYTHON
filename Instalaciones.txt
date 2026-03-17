@@ -1,39 +1,25 @@
 Las instrucciones para crear un ambiente virtual para implementar FastAPI está en la documentación oficial:
 https://fastapi.tiangolo.com/virtual-environments/#install-packages-directly
 
+
+REALIZAR LOS PASOS DEL 1 AL 5 PARA CADA DISPOSITIVO DIFERENTE EN EL QUE CLONÓ EL REPOSITORIO
+
+
 1. crear entorno virtual: asegurese de estar ubicado en el repositorio del proyecto
 ejecute: python -m venv .venv
-
-- en wsl (con python3): python3 -m venv .venv
 
 2. Activar el entorno virtual: hacer esto cada que inicias la terminal para ejecutar tu proyecto
 terminal bash: source .venv/Scripts/activate
 terminal powerShell: .venv\Scripts\Activate.ps1
-wsl (python3): source .venv/bin/activate
 
-( !! ) -> Si no aparece el visual en la terminal del entorno virtual, puedes verificar con: which python3
-(ejemplo de salida:  ../CRUD-PYTHON/.venv/lib/python3.12/site-packages/pip) -> lo importantes es ver el .venv en el path
-
-
----
 3. Actualizar a la última version el pip
-windows : python -m pip install --upgrade pip
-wsl : python3 -m pip install --upgrade pip
---
+python -m pip install --upgrade pip
 
 4. Iniciar repositorio en git y agregar al .gitignore el archivo .venv
 echo "*" > .venv/.gitignore
 
---------------
-5. Instalar directamente los paquetes en el entorno virtual ACTIVADO:
-pip install --upgrade "fastapi[standard]"
----
-
-Si quieres que pip actualice todo lo que ya esté instalado en el entorno:
-
-pip install --upgrade --upgrade-strategy eager "fastapi[standard]"
-
---------------
+5. Instalar directamente los paquetes:
+pip install "fastapi[standard]"
 
 6. Como se está utilizando MySQL, es importante importar el conector: pip install mysql-connector
 7. Asegurarse de tener una version actualizada: pip install --upgrade mysql-connector-python
